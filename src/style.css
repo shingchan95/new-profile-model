@@ -1,0 +1,21 @@
+
+.animate{
+    animation: jump 1s
+}
+
+
+
+@keyframes jump {
+    0%{top:150px;}
+    20%{top:100px;}
+    /* 30%{top:140px;} */
+    100%{top:150px;}
+}
+
+
+@keyframes left {
+    0%{left:150px;}
+    20%{left:100px;}
+    /* 30%{top:140px;} */
+    100%{left:150px;}
+}
