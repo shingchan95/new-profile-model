@@ -1,37 +1,31 @@
-import {useRef} from 'react'
-import "./style.css"
+import React from "react";
+import Canvas from './components/Canvas'
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
 
-  const characterRef= useRef()
-  const blockRef= useRef()
-
-  
-  
-  const jumping = () =>{
-    characterRef.current.classList.add('animate')
-    const interval= setInterval(() => {
-      if(characterRef.current.getBoundingClientRect().top < blockRef.current.getBoundingClientRect().top+blockRef.current.getBoundingClientRect().height) {
-        console.log("hit")
-        clearInterval(interval)
-      }
-    }, 10);
-    setTimeout(function(){
-      characterRef.current.classList.remove('animate')},1000)
-    }
-    
+// const refContainer = useRef();
+// console.log(refContainer.current)
+// console.log(event.keyCode)
+// characterRef.current.classList.add('animate')
+// if(characterRef.current.getBoundingClientRect().top < blockRef.current.getBoundingClientRect().top+blockRef.current.getBoundingClientRect().height) {
+// setCharacterPosition(characterPosition+10)
+// characterRef.current.classList.add('moveLeft')   
+// characterRef.current.style.animationPlayState = 'running'
 
 
+// <div  tabIndex={-1} onKeyDown={ (event)=>{handleMovementDown(event);}} onKeyUp={(event)=>{handleMovementUp(event);}}>
+// const draw = (context) => {
+//   context.fillStyle = "rgb(200, 0, 0)";
+//   context.fillRect(10, 10, 50, 50);
 
-  return (
-    <div  tabIndex={-1} onKeyDown={ ()=>{jumping()}}>
-    <div id="game" className="w-[500px] h-[200px] border-2 border-black" >
-      <div ref={characterRef} id="character" className="w-[20px] h-[50px] bg-red-900 relative top-[148px] left-[248px]"></div>
-      <div ref={blockRef} id="block" className="w-[100px] h-[30px] bg-blue-800 relative top-[30px] left-[200px]"></div>
+// }; 
 
-    </div>
-    </div>
-  );
+
+return (
+  <Canvas/>
+);
 }
 
 export default App;
